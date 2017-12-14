@@ -1,5 +1,6 @@
 const Apify = require('apify');
 const _ = require('underscore');
+const request = require('request-promise');
 
 let input, state;
 const output = {executionIds: []};
@@ -26,6 +27,16 @@ function waitForCrawlerFinish(crawlerId){
             }
         }, 1000);
     });
+}
+
+async function postWebhook(url, execIds){
+    const options = {
+        method: 'POST',
+        uri: url,
+        body: JSON.stringify(execIds),
+        json: true
+    };
+    await request(options);
 }
 
 function runActions(actions, parallels){
@@ -87,4 +98,7 @@ Apify.main(async () => {
     await runActions(actions, input.parallel);
     
     Apify.setValue('OUTPUT', output);
+    if(input.finalWebhook){
+        await postWebhook(input.finalWebhook, state.output);
+    }
 });
