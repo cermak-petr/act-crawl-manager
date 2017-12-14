@@ -1,0 +1,15 @@
+{ 
+  "name": "crawl-manager",
+  "version": "1.0.0",
+  "description": "Apify act for running a list of crawlers in an optimal manner",
+  "main": "main.js",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cermak-petr/act-crawl-manager"
+  },
+  "dependencies": {
+    "apify": "^0.4.37",
+    "underscore": "^1.8.3"
+  }
+}
