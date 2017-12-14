@@ -37,3 +37,6 @@ If you set the "finalWebhook" attribute, when all of the crawlers finish a POST 
         ...
     ]
 }
+```
+
+This JSON will also be saved as the act's OUTPUT value.
