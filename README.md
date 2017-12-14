@@ -15,7 +15,7 @@ Input is a JSON object with the following properties:
     // final webhook
     "finalWebhook": FINAL_WEBHOOK,
     
-    //list of crawlers
+    // list of crawlers
     "crawlers": [
         {
             "id": CRAWLER_ID,
@@ -30,7 +30,7 @@ If you set the "finalWebhook" attribute, when all of the crawlers finish a POST 
 
 ```javascript
 {  
-    //list of finished executions
+    // list of finished executions
     "executionIds": [
         EXECUTION_ID_1,
         EXECUTION_ID_2,
